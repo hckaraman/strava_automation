@@ -15,14 +15,10 @@ path = r'.'
 with open('strava.yaml') as file:
     data = yaml.load(file, Loader=yaml.FullLoader)
 
-
 activity_time = []
-# activity_time.append('2019-11-07 07:55:13 UTC')
+# last activity timre
 activity_time.append('2019-11-09 04:26:54 UTC')
-# yapma dur
-yapma_dur = "https://www.strava.com/athletes/164421"
-# doos abi
-doos_abi = "https://www.strava.com/athletes/2196185"
+yapma =  data['yapma']
 
 def commnet(url,activity_time):
     # response = requests.get('https://api.chucknorris.io/jokes/random')
@@ -121,10 +117,7 @@ def mail(time):
         print("Mail sent")
         server.quit()
 
-# commnet(yapma_dur,activity_time)
-
-# schedule.every(1).minutes.do(commnet,doos_abi,activity_time)
-schedule.every().hour.do(commnet,yapma_dur,activity_time)
+schedule.every().hour.do(commnet,yapma,activity_time)
 
 while True:
     schedule.run_pending()

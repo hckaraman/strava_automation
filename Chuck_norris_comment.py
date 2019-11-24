@@ -109,7 +109,7 @@ def mail(time):
         txt = MIMEText(text)
         msg.attach(txt)
         server.send_message(msg, data['mail_from'], [data['mail'],data['mail_to']])
-        # TODO: Send email here
+        # TODO: Send email herecommnet,yapma,activity_time
     except Exception as e:
         # Print any error messages to stdout
         print(e)
@@ -117,7 +117,8 @@ def mail(time):
         print("Mail sent")
         server.quit()
 
-schedule.every().hour.do(commnet,yapma,activity_time)
+commnet(yapma,activity_time)
+# schedule.every().hour.do(commnet,yapma,activity_time)
 
 while True:
     schedule.run_pending()

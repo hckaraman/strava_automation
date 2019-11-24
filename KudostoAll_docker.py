@@ -29,8 +29,8 @@ def kudos_to_all(username,passowd):
     f.write("kudos given at %s\r\n" %pr)
     driver.close()
 
-username = "cagrkaraman@gmail.com" # Strava Username
-password = "1549682Qs++" # Password
+username = "" # Strava Username
+password = "" # Password
 # kudos_to_all(username,password)
 
 # schedule.every().day.at("06:00").do(kudos_to_all,username,password)
